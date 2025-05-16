@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Passphrase Generator</title>
+<script>
+const english = ['one', 'two', 'three'];
+
+function clearBox(BoxID) {
+	document.getElementById(BoxID).value = "";
+}
+function getRandomWord() {
+	var box = document.getElementById("word");
+	box.value = "test";
+}
+function addWordToPhrase() {
+	var word = document.getElementById("word").value;
+	var phrase = document.getElementById("phrase");
+	phrase.value = phrase.value.concat(word);
+}
+</script>
+</head>
+<body>
+<table>
+<tr>
+<td>Step 1: Pick 3 to 6 random words<br>Press 'Generate' to choose a word. Press 'Add' to add it to the passphrase</td>
+<td>
+<table>
+<tr>
+<td><input type="checkbox" name="English" value="en" checked size="2">English</td>
+<td><input type="checkbox" name="Spanish" value="sp" size="2">Spanish</td>
+</tr>
+<tr>
+<td><input type="checkbox" name="Spanish" value="sp" size="2">German</td>
+<td></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<br>
+
+<br>
+<button onclick="getRandomWord()">Generate</button>
+<input type="text" id="word"><br>
+<button onclick="addWordToPhrase()">Add</button>
+<input type="text" id="phrase">
+<button onclick="clearBox('phrase')">Clear</button>
+</body>
+</html>
